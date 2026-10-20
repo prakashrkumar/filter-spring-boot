@@ -32,6 +32,11 @@ class FilterApplicationTests {
 								{"id":123,"name":"prakash kumar","email":"prakash@example.com"}
 								"""))
 				.andExpect(status().isOk())
-				.andExpect(content().string("Done"));
+				.andExpect(content().json("""
+						{
+						  "name": "prakash kumar",
+						  "message": "Student is saved successFully"
+						}
+						"""));
 	}
 }

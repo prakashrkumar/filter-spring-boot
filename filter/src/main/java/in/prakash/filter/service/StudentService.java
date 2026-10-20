@@ -1,20 +1,18 @@
 package in.prakash.filter.service;
 
 import in.prakash.filter.dto.Student;
+import in.prakash.filter.dto.StudentResponseDto;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
-    public void createStudent(Student student){
+    public StudentResponseDto createStudent(Student student) {
+        StudentResponseDto responseDto=new StudentResponseDto();
+        responseDto.setName(student.getName());
+        responseDto.setMessage("Student is saved successFully");
 
-        System.out.println("Student create");
-        System.out.println(student.getEmail());
-        System.out.println(student.getName());
+         return responseDto;
 
-        try {
-            Thread.sleep(2000);
-        }
-        catch (Exception e){}
     }
 
 }

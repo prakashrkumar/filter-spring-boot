@@ -1,6 +1,7 @@
 package in.prakash.filter.controller;
 
 import in.prakash.filter.dto.Student;
+import in.prakash.filter.dto.StudentResponseDto;
 import in.prakash.filter.service.StudentService;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
@@ -22,10 +23,10 @@ public class StudentController {
         this.servletResponse = servletResponse;
     }
     @PostMapping
-    public ResponseEntity<String>createStudent(@RequestBody Student student, ServletRequest servletRequest){
+    public ResponseEntity<StudentResponseDto>createStudent(@RequestBody Student student, ServletRequest servletRequest){
 
-studentService.createStudent(student);
-return ResponseEntity.ok("Done");
+      StudentResponseDto responseDto= studentService.createStudent(student);
+return ResponseEntity.ok(responseDto);
     }
 
 

@@ -8,7 +8,7 @@ public class FilterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FilterApplication.class, args);
-		System.out.println("filter application");
+		System.out.println("filter next class application");
 	}
 
 }
